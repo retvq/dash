@@ -1,0 +1,366 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Light grey background */
+}
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.dashboard-row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.widget {
+    background-color: #ffffff; /* White background */
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 20%; /* Adjust the width based on your preference */
+    transition: transform 0.3s ease-in-out;
+}
+
+.widget:hover {
+    transform: scale(1.03);
+}
+
+h2 {
+    color: #007bff; /* Blue heading color */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue button color */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Calculator buttons styling */
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.calculator-buttons button {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue button color */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.calculator-buttons button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.operator {
+    background-color: #0056b3; /* Dark blue button color for operators */
+}
+
+.equal {
+    background-color: #ffc107; /* Yellow button color for equal sign */
+}
+
+.clear {
+    background-color: #dc3545; /* Red button color for clear */
+}
+
+/* Image Gallery styling */
+#image-upload {
+    margin-top: 10px;
+}
+
+#image-preview img {
+    max-width: 100%;
+    max-height: 150px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* Feedback Form styling */
+textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+.submit {
+    background-color: #28a745; /* Green button color for submit */
+}
+
+/* Add the following styles to your existing styles.css */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Light grey background */
+}
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.widget {
+    background-color: #ffffff; /* White background */
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 22%; /* Adjust the width based on your preference */
+    transition: transform 0.3s ease-in-out;
+}
+
+.widget:hover {
+    transform: scale(1.05);
+}
+
+h2 {
+    color: #009688; /* Teal heading color */
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #009688; /* Teal button color */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #00796b; /* Darker teal on hover */
+}
+
+#image-preview img {
+    max-width: 100%;
+    max-height: 200px;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+/* Additional Styling for Currency Converter */
+#currency-widget select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+/* Add this at the end of your existing CSS */
+
+/* Moving animation for widgets */
+.widget {
+    animation: moveWidget 1s ease-in-out infinite alternate;
+}
+
+@keyframes moveWidget {
+    from { transform: translateX(0); }
+    to { transform: translateX(10px); }
+}
+
+/* Custom cursor styling */
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #007bff; /* Blue color */
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.1s, height 0.1s;
+}
+/* ... Your existing CSS ... */
+
+/* Additional styling for animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Apply animations to widgets */
+.widget {
+    /* ... Your existing styles ... */
+    animation: fadeIn 0.8s ease-in-out; /* Example animation */
+}
+
+/* Custom cursor styling */
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: #007bff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    animation: fadeIn 0.5s ease-in-out; /* Example animation */
+}
+/* Add this section to your existing styles.css file */
+
+#quotes-widget {
+    text-align: center;
+}
+
+#random-quote {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+#quotes-widget button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue button color */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#quotes-widget button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+/* Add some styling for the news widget */
+#news-widget {
+    background-color: #f5f5f5; /* Light grey background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+#news-widget:hover {
+    transform: scale(1.03);
+}
+
+#news-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#news-list li {
+    margin-bottom: 10px;
+}
+
+#news-list a {
+    text-decoration: none;
+    color: #007bff; /* Blue link color */
+    font-weight: bold;
+}
+
+#news-list a:hover {
+    text-decoration: underline;
+}
+#gallery-widget {
+    text-align: center;
+}
+
+#image-upload {
+    margin-top: 10px;
+}
+
+#image-preview img {
+    max-width: 100%;
+    max-height: 150px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+#image-preview {
+    margin-top: 10px;
+}
+
+#image-upload,
+#image-preview {
+    display: none;
+}
+.feedback-widget textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+.feedback-widget .submit {
+    background-color: #28a745; /* Green button color for submit */
+    margin-top: 10px;
+}
+
+.feedback-widget .submit:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.feedback-widget #feedback-message {
+    margin-top: 10px;
+}
+#weather-widget {
+    text-align: center;
+}
+
+#weather-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#location {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#temperature {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+#description {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#icon {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    margin-bottom: 10px;
+}

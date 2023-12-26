@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light grey background */
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .site-header {
+            background: linear-gradient(to right, #4b6cb7, #182848); /* Gradient background for header */
+            color: #ffffff; /* White text color for header */
+            padding: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            perspective: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .site-title {
+            font-size: 3em;
+            margin: 0;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: translateZ(-50px);
+            transition: transform 0.3s ease-in-out;
+            color: #ffc107; /* Yellow text color for title */
+        }
+
+        .site-title:hover {
+            transform: translateZ(0) rotateX(360deg); /* Add rotation effect on hover */
+        }
+
+        .site-description {
+            font-size: 1.2em;
+            margin: 0;
+            color: #ffffff; /* White text color for description */
+            margin-top: 10px;
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* Overlay for a modern look */
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-overlay"></div>
+        <div class="header-container">
+            <h1 class="site-title">Dashboard</h1>
+            <p class="site-description">Your All-in-One Hub for Productivity and Inspiration</p>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <div class="dashboard-row">
+            <div class="widget" id="todo-widget">
+                <h2>To-Do List</h2>
+                <ul id="todo-list"></ul>
+                <input type="text" id="new-task" placeholder="Add a new task">
+                <button onclick="addTask()">Add Task</button>
+            </div>
+            <div class="widget" id="weather-widget">
+                <h2>Weather Widget</h2>
+                <div id="weather-info">
+                    <div id="location">Loading...</div>
+                    <div id="temperature">Loading...</div>
+                    <div id="description">Loading...</div>
+                    <div id="icon"></div>
+                </div>
+            </div>
+            <div class="widget" id="currency-widget">
+                <h2>Currency Converter</h2>
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" placeholder="Enter amount">
+                <label for="from-currency">From Currency:</label>
+                <select id="from-currency">
+                    <option value="inr">INR</option>
+                    <option value="usd">USD</option>
+                    <option value="eur">EUR</option>
+                    <option value="gbp">GBP</option>
+                </select>
+                <label for="to-currency">To Currency:</label>
+                <select id="to-currency">
+                    <option value="inr">INR</option>
+                    <option value="usd">USD</option>
+                    <option value="eur">EUR</option>
+                    <option value="gbp">GBP</option>
+                </select>
+                <button onclick="convertCurrency()">Convert</button>
+                <p id="converted-amount"></p>
+            </div>
+            <div class="widget" id="quotes-widget">
+                <h2>Random Quotes</h2>
+                <p id="random-quote"></p>
+                <button onclick="getRandomQuote()">Get Quote</button>
+            </div>
+        </div>
+
+        <div class="dashboard-row">
+            <div class="widget" id="news-widget">
+                <h2>News Feed</h2>
+                <ul id="news-list"></ul>
+                <button onclick="fetchNews()">Refresh News</button>
+            </div>
+            <div class="widget calculator-widget" id="calculator-widget">
+                <h2>Calculator</h2>
+                <input type="text" id="calc-display" readonly>
+                <div class="calculator-buttons">
+                    <button onclick="appendToDisplay('1')">1</button>
+                    <button onclick="appendToDisplay('2')">2</button>
+                    <button onclick="appendToDisplay('3')">3</button>
+                    <button class="operator" onclick="appendToDisplay('+')">+</button>
+                    <button onclick="appendToDisplay('4')">4</button>
+                    <button onclick="appendToDisplay('5')">5</button>
+                    <button onclick="appendToDisplay('6')">6</button>
+                    <button class="operator" onclick="appendToDisplay('-')">-</button>
+                    <button onclick="appendToDisplay('7')">7</button>
+                    <button onclick="appendToDisplay('8')">8</button>
+                    <button onclick="appendToDisplay('9')">9</button>
+                    <button class="operator" onclick="appendToDisplay('*')">*</button>
+                    <button onclick="appendToDisplay('0')">0</button>
+                    <button class="clear" onclick="clearDisplay()">C</button>
+                    <button class="equal" onclick="calculate()">=</button>
+                    <button class="operator" onclick="appendToDisplay('/')">/</button>
+                </div>
+            </div>
+            <div class="widget" id="gallery-widget">
+                <h2>Image Gallery</h2>
+                <input type="file" id="image-upload" accept="image/*">
+                <button onclick="uploadImage()">Upload Image</button>
+                <div id="image-preview"></div>
+            </div>
+            <div class="widget feedback-widget" id="feedback-widget">
+                <h2>Feedback Form</h2>
+                <label for="feedback">Your Feedback:</label>
+                <textarea id="feedback" rows="4" placeholder="Type your feedback here"></textarea>
+                <button class="submit" onclick="submitFeedback()">Submit</button>
+                <p id="feedback-message"></p>
+            </div>
+        </div>
+        <!-- Custom cursor element -->
+        <div class="custom-cursor"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
